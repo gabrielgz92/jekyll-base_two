@@ -1,0 +1,26 @@
+---
+title: "Projects"
+layout: default
+permalink: "/author-Projects.html"
+---
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="row align-items-center mb-5">
+            <div class="col-md-9">
+                <h2 class="font-weight-bold">{{page.title}}</h2>
+                <p><a href="{{ site.authors.Projects.site }}">{{ site.authors.Projects.site }}</a></p>
+                <p class="excerpt">{{ site.authors.Projects.bio }}</p>
+            </div>
+            <div class="col-md-3 text-right">
+                <img alt="{{ site.authors.Projects.name }}" src="{{site.baseurl}}/{{ site.authors.Projects.avatar }}" class="rounded-circle" height="100" width="100">
+            </div>
+        </div>
+        <h4 class="font-weight-bold spanborder"><span>Posts in {{page.title}}</span></h4>
+            {% assign posts = site.posts | where:"author","Projects" %}
+            {% for post in posts %}
+            {% include main-loop-card.html %}
+            {% endfor %}
+    </div>
+</div>
+</div>
